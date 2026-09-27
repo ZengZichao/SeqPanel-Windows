@@ -1,0 +1,93 @@
+{
+  "displayName": "GoAlign",
+  "positional": {
+    "append": {
+      "label": "alignment files to append",
+      "labelZh": "要追加的比对文件",
+      "help": "Paths of the alignments to append to the input one, separated by spaces.",
+      "helpZh": "要追加到输入比对之后的比对文件路径，用空格分隔。",
+      "minimum": 1
+    },
+    "concat": {
+      "label": "alignment files to concatenate",
+      "labelZh": "要拼接的比对文件",
+      "help": "Paths of the alignments concatenated with the input one. Sequences are matched by name.",
+      "helpZh": "与输入比对做拼接的比对文件路径，按序列名对齐；用空格分隔。",
+      "minimum": 1
+    },
+    "revcomp": {
+      "label": "sequence names",
+      "labelZh": "序列名",
+      "help": "Only these sequences are reverse-complemented. With no argument, the whole alignment is.",
+      "helpZh": "只对这些序列做反向互补；不填则反向互补整个比对。",
+      "minimum": 1
+    },
+    "subset": {
+      "label": "sequence names",
+      "labelZh": "序列名",
+      "help": "Sequence names to keep, separated by spaces. Add --indices to give 0-based positions instead, or --regexp for patterns.",
+      "helpZh": "要保留的序列名，用空格分隔；改用 --indices 可填 0 起的序号，改用 --regexp 可填正则。",
+      "minimum": 1
+    },
+    "subsites": {
+      "label": "site positions",
+      "labelZh": "位点位置",
+      "help": "0-based site positions to keep, separated by spaces. Add --reverse to drop them instead.",
+      "helpZh": "要保留的位点位置（从 0 开始），用空格分隔；改用 --reverse 则删除这些位点。",
+      "minimum": 1
+    }
+  },
+  "templates": [
+    {
+      "name": "Strip gaps then summarize",
+      "nameZh": "去缺口后统计",
+      "description": "Drop gap-dominated sequences and gap-containing sites, then print the alignment statistics. Statistics end the chain.",
+      "descriptionZh": "先删掉缺口过多的序列，再删掉含缺口的位点，最后打印比对统计。统计命令会消费比对，因此是链条的终点。",
+      "terminal": true,
+      "steps": [
+        { "command": "clean seqs", "flags": {} },
+        { "command": "clean sites", "flags": { "char": "GAP", "cutoff": 0 } },
+        { "command": "stats", "flags": {} }
+      ]
+    },
+    {
+      "name": "Pairwise distance matrix",
+      "nameZh": "两两距离矩阵",
+      "description": "Kimura 2-parameter distances computed on gap-free sites. Prints a matrix instead of an alignment, so it ends a chain.",
+      "descriptionZh": "在无缺口的位点上计算 K2P 两两距离。输出的是距离矩阵而非比对，因此是链条的终点。",
+      "terminal": true,
+      "steps": [
+        { "command": "compute distance", "flags": { "model": "k2p", "rm-gaps": true } }
+      ]
+    },
+    {
+      "name": "Alignment heatmap",
+      "nameZh": "比对热图",
+      "description": "Render the alignment as a PNG, one row per sequence and one pixel per character.",
+      "descriptionZh": "把比对渲染成 PNG：每行一条序列，每个字符一个像素。",
+      "steps": [
+        { "command": "draw png", "flags": {} }
+      ]
+    },
+    {
+      "name": "Shorten names and export Phylip",
+      "nameZh": "截短序列名并导出 Phylip",
+      "description": "Trim sequence names to 12 characters and write the alignment out in Phylip format.",
+      "descriptionZh": "把序列名截断到 12 个字符，并以 Phylip 格式输出比对。",
+      "steps": [
+        { "command": "trim name", "flags": { "nb-char": 12 } },
+        { "command": "reformat phylip", "flags": {} }
+      ]
+    },
+    {
+      "name": "Deduplicate and export Nexus",
+      "nameZh": "去重并导出 Nexus",
+      "description": "Remove sequences that are byte-identical, then convert the alignment to Nexus.",
+      "descriptionZh": "删除序列内容完全重复的序列，再把比对转换为 Nexus 格式。",
+      "steps": [
+        { "command": "dedup", "flags": {} },
+        { "command": "reformat nexus", "flags": {} }
+      ]
+    }
+  ]
+}
