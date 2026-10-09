@@ -39,6 +39,17 @@ SeqPanel 60s 产品宣传视频 · 交付清单（v3：排版与配乐修复后�
 == 体积 ==
 41M	.
 
+== git 状态（上面是本地目录全量清单，仓库只收源码） ==
+入库：MANIFEST.txt / README.md / 分镜脚本.md / audio/synth_audio.py
+      build/encode.mjs / build/render-frames.mjs
+      scene/index.html / scene/anim.js / scene/app-ui.js / scene/main.js
+      scene/assets/*.png / output/poster.jpg / .gitignore
+未入库：audio/mix.wav、output/*.mp4、build/logs/*、build/frames/*
+      —— 都是可由源码重新生成的产物，见 video/.gitignore 与 video/README.md 的重渲染步骤
+成片在线地址：https://github.com/ZengZichao/SeqPanel-Windows/releases/download/v0.1.0/SeqPanel-promo-60s.mp4
+      Release 附件名为 ASCII（SeqPanel-promo-60s.mp4），内容即本地的
+      output/SeqPanel-产品宣传视频-60s.mp4：30061432 B，首/中/尾各 256 KB 抽样 sha256 一致
+
 == 成片参数（实测） ==
 duration 60.000s · 1920x1080 · 30fps · H.264 High yuv420p bt709 3807 kb/s · AAC-LC 48k stereo 192 kb/s
 -16.9 LUFS · LRA 5.8 LU · TP -6.7 dBFS · blackdetect 0 · freezedetect(0.8s) 0 · silencedetect 0 · 全解码 0 错误
