@@ -1,0 +1,9 @@
+# Rendered media is published as a GitHub Release asset, not committed into history.
+# Everything ignored here is reproducible with the scripts in this folder.
+output/*.mp4
+audio/mix.wav
+build/frames/
+build/qa/
+build/logs/
+
+# output/poster.jpg stays tracked: the READMEs use it as the video thumbnail.

@@ -1,0 +1,45 @@
+SeqPanel 60s 产品宣传视频 · 交付清单（v3：排版与配乐修复后）
+
+== 文件 ==
+./MANIFEST.txt
+./README.md
+./audio/mix.wav
+./audio/synth_audio.py
+./build/encode.mjs
+./build/logs/audio-patch.log
+./build/logs/audit.log
+./build/logs/final-audio-video.log
+./build/logs/final3.log
+./build/logs/finalstat.log
+./build/logs/framecheck.log
+./build/logs/prog10.log
+./build/logs/prog9.log
+./build/logs/qa3.log
+./build/logs/qa4.log
+./build/logs/s7audio.log
+./build/logs/s7err.log
+./build/logs/sheet4.log
+./build/logs/splice.log
+./build/logs/v10.log
+./build/logs/v6.log
+./build/logs/v7.log
+./build/logs/v8.log
+./build/logs/v9.log
+./build/render-frames.mjs
+./output/SeqPanel-产品宣传视频-60s.mp4
+./output/poster.jpg
+./scene/anim.js
+./scene/app-ui.js
+./scene/assets/interface-en-light.png
+./scene/assets/interface-zh-dark.png
+./scene/index.html
+./scene/main.js
+./分镜脚本.md
+
+== 体积 ==
+41M	.
+
+== 成片参数（实测） ==
+duration 60.000s · 1920x1080 · 30fps · H.264 High yuv420p bt709 3807 kb/s · AAC-LC 48k stereo 192 kb/s
+-16.9 LUFS · LRA 5.8 LU · TP -6.7 dBFS · blackdetect 0 · freezedetect(0.8s) 0 · silencedetect 0 · 全解码 0 错误
+字幕：仅画面内烧录，无外挂字幕文件

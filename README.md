@@ -14,6 +14,16 @@ build can be copied out and run in a terminal unchanged.
 
 ---
 
+## Promo video
+
+[![SeqPanel 60-second promo video](video/output/poster.jpg)](https://github.com/ZengZichao/SeqPanel-Windows/releases/download/v0.1.0/SeqPanel-promo-60s.mp4)
+
+60 seconds · 1920×1080 · 30 fps · rendered frame by frame (not a screen recording).
+**[Watch / download](https://github.com/ZengZichao/SeqPanel-Windows/releases/tag/v0.1.0)** ·
+[How it is made and re-rendered](video/README.md) · [Storyboard](video/分镜脚本.md)
+
+---
+
 ## Why this exists
 
 Alignment CLIs are powerful and hard to drive by hand. GoAlign alone exposes 76 runnable

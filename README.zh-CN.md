@@ -12,6 +12,16 @@ GoTree），它就变成那个程序的面板。
 
 ---
 
+## 宣传视频
+
+[![SeqPanel 60 秒产品宣传视频](video/output/poster.jpg)](https://github.com/ZengZichao/SeqPanel-Windows/releases/download/v0.1.0/SeqPanel-promo-60s.mp4)
+
+60 秒产品宣发片 · 1920×1080 · 30 fps · 逐帧渲染（非录屏）。
+**[观看 / 下载](https://github.com/ZengZichao/SeqPanel-Windows/releases/tag/v0.1.0)** ·
+[制作与重渲染说明](video/README.md) · [分镜脚本](video/分镜脚本.md)
+
+---
+
 ## 为什么要做这个
 
 比对类命令行工具很强，但手工驱动很费劲。仅 GoAlign 就有 76 个可执行命令、分属 42 个顶层
